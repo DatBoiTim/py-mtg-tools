@@ -1,6 +1,7 @@
 import os
+from uuid import UUID
 
-def flip(cause_uuid: bytes) -> bool|None:
+def flip(cause_uuid: UUID) -> bool|None:
     """
     Uses urandom for more realistic randomness
     Treats even numbers as heads, odd as tails

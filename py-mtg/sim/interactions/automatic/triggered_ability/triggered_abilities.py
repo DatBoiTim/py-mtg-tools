@@ -1,5 +1,6 @@
 from ability_triggers import AbilityTriggerEnum
 from typing import ByteString, Callable
+from uuid import UUID
 
 class TriggeredAbility(Interaction):
     """
@@ -17,6 +18,9 @@ class TriggeredAbility(Interaction):
     def trigger_type(self)->AbilityTriggerEnum:
         return self._trigger_type.copy()
 
+    @abstractmethod
+    def trigger(self, cause_uuid: UUID, *args, **kwargs):
+
 class ConditionalTriggeredAbility(Trigger):
     """
     Any trigger which has to have conditions met.
@@ -29,8 +33,6 @@ class ConditionalTriggeredAbility(Trigger):
     def _check_condition(self, cause: , *arg, **kwargs) -> bool:
 
     @abstractmethod
-    def _effect(self, cause_uuid: bytes, *args, **kwargs):
+    def _effect(self, cause_uuid: UUID, *args, **kwargs):
 
-    @abstractmethod
-    def resolve(self, cause_uuid, *args, **kwargs):
 

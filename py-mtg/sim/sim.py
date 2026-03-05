@@ -17,7 +17,7 @@ class ActionStack:
         return self._stack.copy()
 
     @stack.setter
-    def stack(self, new)->None:
+    def stack(self, new: Self)->None:
         self._stack = new.copy()
 
 class TriggerDictionary:

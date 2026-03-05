@@ -34,7 +34,7 @@ class Effect(ABC)
         self._func = new.copy()
 
     @abstractmethod
-    def _resolve_triggers(self)->:
+    def _resolve_triggers(self)->bool:
 
     @abstractmethod
     def resolve(self)->bool:

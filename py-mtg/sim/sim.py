@@ -31,7 +31,7 @@ class TriggerDictionary:
         return self._trigger
 
     @property
-    def trigger_list(self)->list[TriggeredAbility]:
+    def trigger_list(self)->dict[UUID, TriggeredAbility]:
         return self._trigger_list
 
     @trigger_list.setter
